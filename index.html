@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKD Cricket Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Application Screen -->
+    <div id="main-screen" class="screen">
+        <div class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1>🏏 BKD Cricket Team</h1>
+                    <div class="header-actions">
+                        <div class="database-status" id="database-status">
+                            <span class="status-indicator"></span>
+                            <span class="status-text">Database Connected</span>
+                        </div>
+                        <button id="admin-toggle" class="btn btn--outline btn--sm">Admin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dashboard-nav">
+                <button class="nav-btn active" data-section="players">Player Selection</button>
+                <button class="nav-btn" data-section="guests">Guest Players</button>
+                <button class="nav-btn" data-section="teams">Generate Teams</button>
+                <button class="nav-btn admin-only hidden" data-section="admin">Admin Panel</button>
+            </div>
+
+            <!-- Player Selection Section -->
+            <div id="players-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Select Available Players for Today</h2>
+                    <div class="player-stats">
+                        <span class="stat-item">Total: <strong id="total-count">0</strong></span>
+                        <span class="stat-item">Available: <strong id="available-count">0</strong></span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__body">
+                        <div class="player-selection-grid" id="player-selection-grid">
+                            <p class="loading-message">Loading players...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guest Players Section -->
+            <div id="guests-section" class="dashboard-section hidden">
+                <div class="section-header">
+                    <h2>Add Guest Players for Today</h2>
+                    <button id="add-guest-btn" class="btn btn--primary">Add Guest Player</button>
+                </div>
+
+                <div class="guest-info card">
+                    <div class="card__body">
+                        <p><strong>Note:</strong> Guest players are temporary for today only and won't be saved to the database. They get default ranking for team balancing.</p>
+                    </div>
+                </div>
+
+                <div class="card" id="guests-card">
+                    <div class="card__body">
+                        <div class="guest-players-list" id="guest-players-list">
+                            <p class="no-guests">No guest players added yet. Click "Add Guest Player" to add temporary players for today's match.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams Section -->
+            <div id="teams-section" class="dashboard-section hidden">
+                <div class="section-header">
+                    <h2>Team Generation</h2>
+                    <div class="team-actions">
+                        <button id="generate-teams-btn" class="btn btn--primary">Generate Teams</button>
+                        <button id="regenerate-teams-btn" class="btn btn--outline hidden">Regenerate Teams</button>
+                    </div>
+                </div>
+
+                <div id="teams-container" class="teams-container">
+                    <div class="team-card">
+                        <h3>🟢 Team A <span id="team-a-count-badge" class="team-count-badge">(0 players)</span></h3>
+                        <div class="team-players" id="team-a-players">
+                            <p class="no-teams">Select available players and click "Generate Teams" to create balanced teams</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <h3>🔵 Team B <span id="team-b-count-badge" class="team-count-badge">(0 players)</span></h3>
+                        <div class="team-players" id="team-b-players">
+                            <p class="no-teams">Select available players and click "Generate Teams" to create balanced teams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="team-balance-info" class="team-balance-info hidden">
+                    <div class="balance-summary card">
+                        <div class="card__body">
+                            <h4>Team Balance Analysis</h4>
+                            <div class="balance-stats">
+                                <div class="balance-stat">
+                                    <span class="balance-label">Strength Difference:</span>
+                                    <span class="balance-value" id="strength-diff">0</span>
+                                </div>
+                                <div class="balance-stat">
+                                    <span class="balance-label">Balance Quality:</span>
+                                    <span class="balance-value" id="balance-quality">Perfect</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Panel Section -->
+            <div id="admin-section" class="dashboard-section admin-only hidden">
+                <div class="section-header">
+                    <h2>Admin Panel - Permanent Player Management</h2>
+                    <button id="add-permanent-player-btn" class="btn btn--primary">Add Permanent Player</button>
+                </div>
+
+                <div class="card">
+                    <div class="card__body">
+                        <div class="table-container">
+                            <table id="admin-players-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Ranking</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-players-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Access</h3>
+                <button id="close-admin-login" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label for="admin-username" class="form-label">Username</label>
+                        <input type="text" id="admin-username" class="form-control" value="admin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password" class="form-label">Password</label>
+                        <input type="password" id="admin-password" class="form-control" value="admin123" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-admin-login" class="btn btn--outline">Cancel</button>
+                        <button type="submit" class="btn btn--primary">Login</button>
+                    </div>
+                </form>
+                <div id="admin-login-error" class="error-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guest Player Modal -->
+    <div id="guest-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="guest-modal-title">Add Guest Player</h3>
+                <button id="close-guest-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="guest-form">
+                    <div class="form-group">
+                        <label for="guest-name" class="form-label">Player Name</label>
+                        <input type="text" id="guest-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guest-role" class="form-label">Playing Role</label>
+                        <select id="guest-role" class="form-control" required>
+                            <option value="">Select Role</option>
+                            <option value="Batter">Batter</option>
+                            <option value="Bowler">Bowler</option>
+                            <option value="Allrounder">Allrounder</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-guest" class="btn btn--outline">Cancel</button>
+                        <button type="submit" class="btn btn--primary">Add Guest</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permanent Player Modal -->
+    <div id="permanent-player-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="permanent-modal-title">Add Permanent Player</h3>
+                <button id="close-permanent-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="permanent-player-form">
+                    <div class="form-group">
+                        <label for="permanent-name" class="form-label">Player Name</label>
+                        <input type="text" id="permanent-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="permanent-role" class="form-label">Playing Role</label>
+                        <select id="permanent-role" class="form-control" required>
+                            <option value="">Select Role</option>
+                            <option value="Batter">Batter</option>
+                            <option value="Bowler">Bowler</option>
+                            <option value="Allrounder">Allrounder</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="permanent-ranking" class="form-label">Skill Ranking (1-100)</label>
+                        <input type="number" id="permanent-ranking" class="form-control" min="1" max="100" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-permanent" class="btn btn--outline">Cancel</button>
+                        <button type="submit" class="btn btn--primary">Save Player</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <p>Creating balanced teams...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
