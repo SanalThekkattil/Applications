@@ -37,24 +37,33 @@ class BKDCricketApp {
     initializeSampleData() {
         // All players start as UNAVAILABLE by default
         this.permanentPlayers = [
-            {"id": 1, "name": "Rahul Sharma", "role": "Batter", "ranking": 85, "isAvailable": false, "type": "permanent"},
-            {"id": 2, "name": "Mohammed Ali", "role": "Bowler", "ranking": 78, "isAvailable": false, "type": "permanent"},
-            {"id": 3, "name": "Priya Patel", "role": "Allrounder", "ranking": 82, "isAvailable": false, "type": "permanent"},
-            {"id": 4, "name": "Arjun Singh", "role": "Batter", "ranking": 76, "isAvailable": false, "type": "permanent"},
-            {"id": 5, "name": "Sneha Kumar", "role": "Bowler", "ranking": 88, "isAvailable": false, "type": "permanent"},
-            {"id": 6, "name": "Karthik Raj", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
-            {"id": 7, "name": "Anita Reddy", "role": "Batter", "ranking": 72, "isAvailable": false, "type": "permanent"},
-            {"id": 8, "name": "Vikram Gupta", "role": "Bowler", "ranking": 80, "isAvailable": false, "type": "permanent"},
-            {"id": 9, "name": "Maya Joshi", "role": "Allrounder", "ranking": 75, "isAvailable": false, "type": "permanent"},
-            {"id": 10, "name": "Rohit Mehta", "role": "Batter", "ranking": 83, "isAvailable": false, "type": "permanent"},
-            {"id": 11, "name": "Deepika Nair", "role": "Bowler", "ranking": 77, "isAvailable": false, "type": "permanent"},
-            {"id": 12, "name": "Suresh Iyer", "role": "Allrounder", "ranking": 86, "isAvailable": false, "type": "permanent"},
-            {"id": 13, "name": "Kavya Shetty", "role": "Batter", "ranking": 79, "isAvailable": false, "type": "permanent"},
-            {"id": 14, "name": "Anil Kumar", "role": "Bowler", "ranking": 84, "isAvailable": false, "type": "permanent"},
-            {"id": 15, "name": "Ritu Agarwal", "role": "Allrounder", "ranking": 81, "isAvailable": false, "type": "permanent"},
-            {"id": 16, "name": "Manish Jain", "role": "Batter", "ranking": 74, "isAvailable": false, "type": "permanent"},
-            {"id": 17, "name": "Pooja Verma", "role": "Bowler", "ranking": 87, "isAvailable": false, "type": "permanent"},
-            {"id": 18, "name": "Sanjay Rao", "role": "Allrounder", "ranking": 73, "isAvailable": false, "type": "permanent"}
+           
+            {"id": 1, "name": "Sanal", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 2, "name": "Gokul", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 3, "name": "Sudheer", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 4, "name": "Vijesh Kuttan", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 5, "name": "Danush", "role": "Allrounder", "ranking": 89, "isAvailable": false, "type": "permanent"},
+            {"id": 6, "name": "Arjun", "role": "Allrounder", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 7, "name": "Pradheesh", "role": "Batter", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 8, "name": "Saurav Appu", "role": "Allrounder", "ranking": 68, "isAvailable": false, "type": "permanent"},
+            {"id": 9, "name": "Divekan", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
+            {"id": 10, "name": "Hari", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 11, "name": "Jayan", "role": "Allrounder", "ranking": 88, "isAvailable": false, "type": "permanent"},
+            {"id": 12, "name": "Manikuttan", "role": "Allrounder", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 13, "name": "Muthu", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
+            {"id": 14, "name": "Nandu", "role": "Allrounder", "ranking": 65, "isAvailable": false, "type": "permanent"},
+            {"id": 15, "name": "Akhil", "role": "Batter", "ranking": 50, "isAvailable": false, "type": "permanent"},
+            {"id": 16, "name": "Prajith", "role": "Batter", "ranking": 89, "isAvailable": false, "type": "permanent"},
+            {"id": 17, "name": "Pranav", "role": "Batter", "ranking": 60, "isAvailable": false, "type": "permanent"},
+            {"id": 19, "name": "Rijith", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
+            {"id": 20, "name": "Subhi", "role": "Allrounder", "ranking": 65, "isAvailable": false, "type": "permanent"},
+            {"id": 21, "name": "Sumesh", "role": "Allrounder", "ranking": 50, "isAvailable": false, "type": "permanent"},
+            {"id": 22, "name": "Unnikuttan", "role": "Bowler", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 23, "name": "Suresh", "role": "Batter", "ranking": 76, "isAvailable": false, "type": "permanent"},
+            {"id": 24, "name": "Nasar", "role": "Bowler", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 25, "name": "Santhosh Babu", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
+            {"id": 26, "name": "Kannan Thekkecity", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 27, "name": "Unni Thekkecity", "role": "Batter", "ranking": 85, "isAvailable": false, "type": "permanent"}
         ];
 
         this.adminCredentials = {
