@@ -39,7 +39,7 @@ class BKDCricketApp {
         this.permanentPlayers = [
            
             {"id": 1, "name": "Sanal", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
-            {"id": 2, "name": "Gokul", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 2, "name": "Gokul", "role": "Allrounder", "ranking": 92, "isAvailable": false, "type": "permanent"},
             {"id": 3, "name": "Sudheer", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
             {"id": 4, "name": "Vijesh Kuttan", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
             {"id": 5, "name": "Danush", "role": "Allrounder", "ranking": 89, "isAvailable": false, "type": "permanent"},
@@ -62,8 +62,9 @@ class BKDCricketApp {
             {"id": 23, "name": "Suresh", "role": "Batter", "ranking": 76, "isAvailable": false, "type": "permanent"},
             {"id": 24, "name": "Jijil Appu", "role": "Allrounder", "ranking": 88, "isAvailable": false, "type": "permanent"},
             {"id": 25, "name": "Santhosh Babu", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
-            {"id": 26, "name": "Kannan Thekkecity", "role": "Allrounder", "ranking": 90, "isAvailable": false, "type": "permanent"},
+            {"id": 26, "name": "Kannan Thekkecity", "role": "Allrounder", "ranking": 92, "isAvailable": false, "type": "permanent"},
             {"id": 27, "name": "Unni Thekkecity", "role": "Batter", "ranking": 85, "isAvailable": false, "type": "permanent"}
+            {"id": 27, "name": "Vinesh", "role": "Batter", "ranking": 40, "isAvailable": false, "type": "permanent"}
         ];
 
         this.adminCredentials = {
