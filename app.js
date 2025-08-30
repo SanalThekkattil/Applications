@@ -58,7 +58,7 @@ class BKDCricketApp {
             {"id": 19, "name": "Rijith", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
             {"id": 20, "name": "Subhi", "role": "Allrounder", "ranking": 65, "isAvailable": false, "type": "permanent"},
             {"id": 21, "name": "Sumesh", "role": "Allrounder", "ranking": 50, "isAvailable": false, "type": "permanent"},
-            {"id": 22, "name": "Unnikuttan", "role": "Bowler", "ranking": 70, "isAvailable": false, "type": "permanent"},
+            {"id": 22, "name": "Unnikuttan", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
             {"id": 23, "name": "Suresh", "role": "Batter", "ranking": 76, "isAvailable": false, "type": "permanent"},
             {"id": 24, "name": "Jijil Appu", "role": "Allrounder", "ranking": 88, "isAvailable": false, "type": "permanent"},
             {"id": 25, "name": "Santhosh Babu", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
