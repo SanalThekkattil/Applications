@@ -64,7 +64,7 @@ class BKDCricketApp {
             {"id": 25, "name": "Santhosh Babu", "role": "Allrounder", "ranking": 85, "isAvailable": false, "type": "permanent"},
             {"id": 26, "name": "Kannan Thekkecity", "role": "Allrounder", "ranking": 92, "isAvailable": false, "type": "permanent"},
             {"id": 27, "name": "Unni Thekkecity", "role": "Batter", "ranking": 85, "isAvailable": false, "type": "permanent"},
-            {"id": 28, "name": "Niyas", "role": "Batter", "ranking": 80, "isAvailable": false, "type": "permanent"},
+            {"id": 28, "name": "Niyas", "role": "Allrounder", "ranking": 80, "isAvailable": false, "type": "permanent"},
             {"id": 28, "name": "Rajesh", "role": "Batter", "ranking": 50, "isAvailable": false, "type": "permanent"}
             
         ];
